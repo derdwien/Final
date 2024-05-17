@@ -1,0 +1,22 @@
+
+services:
+  mysql:
+    image: mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: GoTechMavs!
+      MYSQL_USER: web
+      MYSQL_PASSWORD: AGoodPassword
+      MYSQL_DATABASE: final
+    command: --default-authentication-plugin=mysql_native_password
+    ports: 
+      - 3306:3306
+  
+  phpMyAdmin: 
+    image: phpmyadmin 
+    environment: 
+      PMA_HOST: mysql
+      PMA_USER: root 
+      PMA_PASSWORD: GoTechMavs!
+    ports: 
+      - 8080:80 
+
